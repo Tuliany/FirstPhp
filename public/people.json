@@ -1,8 +1,4 @@
-{
-	"count": 82,
-	"next": "http://swapi.dev/api/people/?page=2",
-	"previous": null,
-	"results": [
+ [
 		{
 			"name": "Luke Skywalker",
 			"height": "172",
@@ -234,4 +230,4 @@
 			"url": "http://swapi.dev/api/people/10/"
 		}
 	]
-}
+
