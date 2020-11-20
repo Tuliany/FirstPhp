@@ -6,4 +6,24 @@ function printablePeople(array $person): string {
   } 
   return $result;
 }
+
+
+/* function printableWoman(array $women): string {
+  //$ladies = "<i>{$women["name"]}</i>";
+  $ladies ="";
+ if( $women["gender"] == "female" ){
+    $ladies .= "<b> {$women["name"]}</b>";
+  } 
+  return $ladies;
+} */
+
+function printableWoman(array $women): string {
+ foreach($women as $key => $lady) {
+  if ($lady["gender"] === "female"){
+    return "<b> {$lady["name"]}</b>";
+  }
+ }
+} 
+
+
 ?>

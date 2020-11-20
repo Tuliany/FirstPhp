@@ -1,6 +1,6 @@
 <?php 
 declare(strict_types=1);
-require_once 'functions.php' 
+require_once 'books_functions.php' 
 ?>
 
 
@@ -19,13 +19,23 @@ require_once 'functions.php'
 
   $booksJson = file_get_contents('books.json');
   $books = json_decode($booksJson, true);
-  //var_dump($books);
+  //var_dump($_GET);
+  if(isset($_GET['title'])){
+    echo "<p>Looking for <b>{$_GET['title']}</b></p>";
+    if(bookingBook($books, $_GET['title'])){
+      echo "booked";
+    } else {
+      echo "the book is not available";
+    }
+    updateBook($books);
+  }
 
 ?>
 <ul>
   <?php  foreach($books as $book) {?>
-    <li><?php echo printableTitle($book); ?></li>
-    
+    <li><a href="?title=<?php echo $book['title']; ?> ">
+    <?php echo printableTitle($book); ?></li>
+    </a>
   <?php } ?>
 </ul>
   

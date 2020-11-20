@@ -18,11 +18,16 @@ require_once 'function.php'
 <?php 
   $peopleJson = file_get_contents('people.json');
   $people = json_decode($peopleJson, true);
+  
   //var_dump($people);
 ?>  
 <ul>
 <?php foreach($people as $person) {?>
  <li><?php echo printablePeople($person); ?></li>
+  <?php } ?>
+
+  <?php foreach($people as $women) {?>
+ <li><?php echo printableWoman($women); ?></li>
   <?php } ?>
 </ul>
 </body>
