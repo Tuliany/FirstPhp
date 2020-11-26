@@ -1,9 +1,9 @@
 <?php
-class Customer
+namespace Bookstore\Domain;
+
+class Customer extends Person
 {
   private $id;
-  private $firstname;
-  private $surname;
   private $email;
 
   public function __construct(
@@ -12,9 +12,9 @@ class Customer
     string $surname,
     string $email
     ) {
+    parent::__construct($firstname, $surname);
+
     $this->id = $id;
-    $this->firstname = $firstname;
-    $this->surname = $surname;
     $this->email = $email;
     }
   
